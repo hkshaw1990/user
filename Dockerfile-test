@@ -1,4 +1,4 @@
-FROM mongo:3
+FROM hkshaw/mongo:3.6
 
 ENV sourcesdir /go/src/github.com/microservices-demo/user/
 ENV GOPATH /go
@@ -6,7 +6,7 @@ ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
 
 RUN apt-get update && apt-get install -yq git curl
 
-RUN curl -sSL https://storage.googleapis.com/golang/go1.7.linux-amd64.tar.gz -o go.tar.gz && \
+RUN curl -sSL https://storage.googleapis.com/golang/go1.7.linux-ppc64le.tar.gz -o go.tar.gz && \
     tar -C /usr/local -xvf go.tar.gz
 RUN go get -v github.com/Masterminds/glide
 
